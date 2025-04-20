@@ -1,0 +1,307 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "id": "tMFoPEgTofYt"
+   },
+   "outputs": [
+    {
+     "ename": "OSError",
+     "evalue": "[WinError 126] The specified module could not be found. Error loading \"c:\\Users\\Selva Karthik\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\torch\\lib\\fbgemm.dll\" or one of its dependencies.",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mOSError\u001b[0m                                   Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[1], line 2\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mpandas\u001b[39;00m \u001b[38;5;28;01mas\u001b[39;00m \u001b[38;5;21;01mpd\u001b[39;00m\n\u001b[1;32m----> 2\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01msentence_transformers\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m SentenceTransformer, util\n",
+      "File \u001b[1;32mc:\\Users\\Selva Karthik\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\sentence_transformers\\__init__.py:7\u001b[0m\n\u001b[0;32m      4\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mimportlib\u001b[39;00m\n\u001b[0;32m      5\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mos\u001b[39;00m\n\u001b[1;32m----> 7\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01msentence_transformers\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcross_encoder\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mCrossEncoder\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m CrossEncoder\n\u001b[0;32m      8\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01msentence_transformers\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mdatasets\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m ParallelSentencesDataset, SentencesDataset\n\u001b[0;32m      9\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01msentence_transformers\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mLoggingHandler\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m LoggingHandler\n",
+      "File \u001b[1;32mc:\\Users\\Selva Karthik\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\sentence_transformers\\cross_encoder\\__init__.py:1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mCrossEncoder\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m CrossEncoder\n\u001b[0;32m      3\u001b[0m __all__ \u001b[38;5;241m=\u001b[39m [\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mCrossEncoder\u001b[39m\u001b[38;5;124m\"\u001b[39m]\n",
+      "File \u001b[1;32mc:\\Users\\Selva Karthik\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\sentence_transformers\\cross_encoder\\CrossEncoder.py:7\u001b[0m\n\u001b[0;32m      4\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01mtyping\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m Callable, Dict, List, Literal, Optional, Tuple, Type, Union\n\u001b[0;32m      6\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mnumpy\u001b[39;00m \u001b[38;5;28;01mas\u001b[39;00m \u001b[38;5;21;01mnp\u001b[39;00m\n\u001b[1;32m----> 7\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mtorch\u001b[39;00m\n\u001b[0;32m      8\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01mtorch\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m Tensor, nn\n\u001b[0;32m      9\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01mtorch\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01moptim\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m Optimizer\n",
+      "File \u001b[1;32mc:\\Users\\Selva Karthik\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\torch\\__init__.py:148\u001b[0m\n\u001b[0;32m    146\u001b[0m                 err \u001b[38;5;241m=\u001b[39m ctypes\u001b[38;5;241m.\u001b[39mWinError(ctypes\u001b[38;5;241m.\u001b[39mget_last_error())\n\u001b[0;32m    147\u001b[0m                 err\u001b[38;5;241m.\u001b[39mstrerror \u001b[38;5;241m+\u001b[39m\u001b[38;5;241m=\u001b[39m \u001b[38;5;124mf\u001b[39m\u001b[38;5;124m'\u001b[39m\u001b[38;5;124m Error loading \u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;132;01m{\u001b[39;00mdll\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124m or one of its dependencies.\u001b[39m\u001b[38;5;124m'\u001b[39m\n\u001b[1;32m--> 148\u001b[0m                 \u001b[38;5;28;01mraise\u001b[39;00m err\n\u001b[0;32m    150\u001b[0m     kernel32\u001b[38;5;241m.\u001b[39mSetErrorMode(prev_error_mode)\n\u001b[0;32m    153\u001b[0m \u001b[38;5;28;01mdef\u001b[39;00m \u001b[38;5;21m_preload_cuda_deps\u001b[39m(lib_folder, lib_name):\n",
+      "\u001b[1;31mOSError\u001b[0m: [WinError 126] The specified module could not be found. Error loading \"c:\\Users\\Selva Karthik\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\torch\\lib\\fbgemm.dll\" or one of its dependencies."
+     ]
+    }
+   ],
+   "source": [
+    "import pandas as pd\n",
+    "from sentence_transformers import SentenceTransformer, util"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/",
+     "height": 424,
+     "referenced_widgets": [
+      "6782d3ea6e4a4c1ba4796832a35df931",
+      "fa144e00f76f4909a59dd306fae70413",
+      "c86af68321e54e08830ecea7be571129",
+      "62a5c3ee886645ad8c0c5f1e23b007d6",
+      "f2db696b95334fcebf9aca84942419d0",
+      "6e39b73c31174435bba3b31a07aa4c5c",
+      "b29a68846df44c3e8fdff08e023b9165",
+      "6c9aeb6ab6d34dd99d3ed46aa81fd09d",
+      "d3fc9a1b1c224f88a5d56cce42c63cc0",
+      "f997277bfff14b7d95ea46d450b39f84",
+      "f37f43eea1054c54a53fe53ad3a94edb",
+      "d4ed8a0f1d244da1a81d0ecfb30e7c57",
+      "6930006c79174cb7a5ebdab8fd45c424",
+      "bec205849ffe43a4b83c10a749f47849",
+      "ed795f75a37f4fc1a344f66c99444507",
+      "4698c08f441b4a97a2128a04be086cd9",
+      "e035a9fccf724ba981154f3f3fa5ec28",
+      "a996eee25f9748138b8417c5b5136e6d",
+      "819811010bee46ea912adc52ca5d50d0",
+      "68418d00ceee41a89dfb27371fe8b797",
+      "c7478e71ed934fac9e66bd6ffac80793",
+      "2dff98520a0e4bc193d7a582a72c1c3b",
+      "bc926d123bff41eda2398547703b5a8d",
+      "343f230e529d41c69c0a72cde36f8ccd",
+      "8402a1df6bd042ab8a0a054005c42be9",
+      "f41950136b7d44a78dee84c89ec721a4",
+      "8cd8d5286da54393a0ea75eecb7ad234",
+      "6f81b5b6abd5411780128b7fc7f426b8",
+      "5c0fb38ec99f489ba0b1828b15b3a3e8",
+      "958dac14fb8741beabac1703b872436f",
+      "fde27c783ef14c409b6c32cd5f2d4fdf",
+      "4e65b5e1b69f4ffd967a2f8a450e9a9e",
+      "6169190121784c4f8678b3536c449c9d",
+      "315d8d4cfa4f4ed18550260bad078b77",
+      "ad7bf53619c9477ca08184df18baf91e",
+      "48acf97b0e3a40ac9bf51bc19320ccb9",
+      "75fd2266f80c4bdfbecc809d2cebee19",
+      "a0c6af0885b544f59546bc03cc40b1b2",
+      "ac110cc83bae4a89bb06943c9b371061",
+      "450e33b4be4d4e2db3344192f0f6a454",
+      "34094e57b7c649dd896aba74ad0dd402",
+      "b55af28b2e2a4706837894378107125d",
+      "7d46c1cd76cb49728f5488b34593a760",
+      "b6624dcec4134125a083605cc9379a3f",
+      "1cf5b822482c4c1bb867ebb5a4b808da",
+      "cf913fa184294a6ea7d3305c7a112404",
+      "0cde3ef5d6d34265b115fa701f1bf9b2",
+      "e149c83eeb57499d97ece33dd2ab48e2",
+      "88fa614cbad941edac27dae2ccd40670",
+      "5a1cc553725d42cf909b4e636f201d17",
+      "2d130e64e69e41028bb3da2e704891cb",
+      "bea6c66db07a4de9a44f46d8cf81b995",
+      "f0b68870f9424e34bd4dc80df97a269f",
+      "63ea448cf91647d588b38af96cb84461",
+      "703152cfa9604088a20a9910ef694aac",
+      "9a8ac4f59394463589e173f70e45a957",
+      "3546409ed1df457f8d847c479b53b789",
+      "6d18430670734e74ac26a7a919e59218",
+      "a82d3cf64d054fcb9cd2afe90892e468",
+      "8f32120997694a43835b6c84c9ce95ed",
+      "bf293a0ad47b485ebf4574e0139c5714",
+      "432e1e0de07d41abb5c83cf04e24d5d7",
+      "d1f3f411ea2543788f77c86f5f63ff5e",
+      "63f69417225d43ac93aacdc90b559ce2",
+      "2b2d2b9d08a04c4095f1b1181870aa57",
+      "6afb3815bf4341028ae88cac7821c469",
+      "cdca286852fc48f99e9bb6c59b453331",
+      "ebdd83db9e354942836d3ac6aa65c9d8",
+      "ce67a626e87b42d793d83061d4549ac7",
+      "0672e583374145ecacc794dd63903e49",
+      "1f5a3b1820c64cc59d9d3631a825965f",
+      "93414984d2024a34a83749e0797d696b",
+      "5b31252a3a1e4b5e8d0917a6aaca780f",
+      "62a3e633ee1546a8b6c28c663db004f1",
+      "07cb88468c0f446d81a17b6337274353",
+      "4dfc2bdc72274e03add4206b0510d302",
+      "d7b18c9f0d6c488499926d8df5cb31ea",
+      "8943ec19f88244128c9c68d64a69acbe",
+      "a267a313e84e48a58e6d6cad3457aa32",
+      "a46a53349bc24692a6eb6209f9d89e0e",
+      "b49b3b44f0bf48a09483d369c5431c86",
+      "e983bf92735741418754560b872b943f",
+      "80a0580e857f4abc833872cb97334e18",
+      "ffdf888d3b92464aa0dd9e839d40d8d6",
+      "64e20f3b461442b0bfcf8f9cd5bcb10d",
+      "d3e27f8be7e04320b2409b1f0670cacd",
+      "8985822c63da4800adcd7cbbb1e54189",
+      "0f30867406e7483bb193f91aa5d00ee6",
+      "a9fdf244f12a4fe5b9b367aa1dfe7a01",
+      "e13bf4b20d634d138c7f18fb738ef384",
+      "1036337c74ae476f8b9bcd1d7fec3667",
+      "79aa22a61e004aabbcda30c39224da4f",
+      "58487b25a3684f4fade35748e4e424cf",
+      "e15872cfdb8748d6b86435171af03ca5",
+      "0e78828b31594c55aa0dc0c9fe8f77d3",
+      "06deb7c200554089b9d074b61a25ce3d",
+      "f509088a3148449abf90bda8c688553e",
+      "13125241c43346fa82df91b64668ed9d",
+      "cc9d7d3d95084a17936086d79ddb7e9d",
+      "a2756be0e63541048cf9944ba94e2444",
+      "8b939906950b42eabfbc9bdb0caa25f4",
+      "c500ff9ef6cf4aac8164d1d98e4bc6ac",
+      "6197e3768cb64cfe819d840cd5c671d3",
+      "21550c64aba846158ff0f586146c5a71",
+      "341b23e8318d4725bcb7c273ebb9e703",
+      "35d93b01d19d4e8ea0c6d415026e3f3b",
+      "bc34d9ba478f439d928136bf6bd51589",
+      "d41654d93a6b415b96ac5638c1c70353",
+      "6e18baffde3a4375b49b04dd0ce99b80",
+      "168e74f5509a41f398a0900a65f9474a",
+      "1bd0f7317b164dceb8762f65f74b4e8e",
+      "122f8ad60f804c4ba7889accedbfd7dc",
+      "44316d6e4be445b9b87152500c36d356",
+      "cd94c18729594d909308fbcdd301185a",
+      "eb32e767cf134e9891cd166954ea1b5a",
+      "8baec02a81d24777adb4374eb09fdf65",
+      "d6d4936e090a49a6bbd5ec3be953c9ab",
+      "5639b7c346a44bad88ab49ea3d48f05f",
+      "f6c72130d32b41a4a0abfc2da0c97baa",
+      "15196550f76149a08c471374d36b21f3",
+      "41178027ac0f407cbc44ec69172d5a24"
+     ]
+    },
+    "id": "JMjdpdFtofbi",
+    "outputId": "570e3040-fa18-4399-d265-47e0409b119b"
+   },
+   "outputs": [],
+   "source": [
+    "model = SentenceTransformer('all-MiniLM-L6-v2')  # Small, fast BERT-based model"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "0H9HIEhcofec"
+   },
+   "outputs": [],
+   "source": [
+    "def create_context_from_csv(df):\n",
+    "    row_texts = []\n",
+    "    for _, row in df.iterrows():\n",
+    "        sentence = sentence = f\"Student_ID {row['Student_ID']}: {row['Name']} is {row['Age']} years old, enrolled in {row['Course']}, scored {row['Marks']} marks, and got grade {row['Grade']}.\"\n",
+    "        row_texts.append(sentence)\n",
+    "    return row_texts\n",
+    "\n",
+    "def get_best_match_answer(question, row_texts):\n",
+    "    # Encode both question and all rows\n",
+    "    question_embedding = model.encode(question, convert_to_tensor=True)\n",
+    "    row_embeddings = model.encode(row_texts, convert_to_tensor=True)\n",
+    "\n",
+    "    # Compute cosine similarity\n",
+    "    scores = util.pytorch_cos_sim(question_embedding, row_embeddings)[0]\n",
+    "    top_idx = scores.argmax().item()\n",
+    "    best_score = scores[top_idx].item()\n",
+    "\n",
+    "    # Optional: filter out low-confidence matches\n",
+    "    if best_score < 0.4:\n",
+    "        return \"🤖 Sorry, I couldn not find a confident match. Please rephrase your question.\"\n",
+    "\n",
+    "    return row_texts[top_idx]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "id": "Vdm94y8yofhI",
+    "outputId": "27aa58fe-7a5b-4ffa-b046-99871e05cb5c"
+   },
+   "outputs": [],
+   "source": [
+    "print(\"BERT-Powered Semantic Student Chatbot\")\n",
+    "csv_path = r\"/content/DL.xlsx\"\n",
+    "df = pd.read_excel(csv_path)\n",
+    "row_texts = create_context_from_csv(df)\n",
+    "while True:\n",
+    "    question = input(\" Your Question: \")\n",
+    "    if question.lower() in [\"exit\", \"quit\"]:\n",
+    "        print(\"Goodbye!\")\n",
+    "        break\n",
+    "    answer = get_best_match_answer(question, row_texts)\n",
+    "    print(f\"🤖 Answer: {answer}\\n\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "wt2zEmMhofjw"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "SU3nnCIrofmo"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "cUnkN-Cuofpo"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "wkfXxglfofsr"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "k8JKDQjKofu-"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "vjf3hOZgofxU"
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "accelerator": "GPU",
+  "colab": {
+   "gpuType": "T4",
+   "provenance": []
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
